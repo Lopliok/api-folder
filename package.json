@@ -1,0 +1,36 @@
+{
+  "name": "task",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/src/server.js",
+    "dev": "nodemon src/server.ts",
+    "watch": "tsx watch .",
+    "devv": "nodemon --exec ts-node src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "concurrently": "^9.0.1",
+    "nodemon": "^3.1.7",
+    "parcel": "^2.12.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  },
+  "description": ""
+}
