@@ -1,3 +1,4 @@
 node_modules/
 app/dist/
-app/.parcel-cache/
+app/.parcel-cache
+dist/
