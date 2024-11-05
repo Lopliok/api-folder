@@ -6,7 +6,7 @@ import { SiTypescript } from "react-icons/si";
 import './App.css'
 import { download } from './utils';
 
-const API_URL = 'http://localhost:3000/'
+const API_URL = process.env.API_URL ?? 'http://localhost:3000/'
 
 type Item = {
   name: string

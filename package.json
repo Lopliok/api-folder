@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
+    "web": "webpack",
     "start": "node dist/src/server.js",
     "watch": "tsx watch .",
     "dev": "nodemon --exec ts-node --esm src/server.ts"

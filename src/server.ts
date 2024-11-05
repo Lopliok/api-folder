@@ -24,26 +24,22 @@ const app: Express = express();
 const port = process.env.PORT || 3000;
 const root = homedir || process.env.ROOT_PATH || "";
 
-
-const getFileType = (file: fs.Dirent) => {
-  let fileType = "unknown"
-  const filename = file.name
-
-  if (file.isDirectory()) {
-    fileType = "folder"
-  }
-
-  if (filename.includes(".")) {
-    const extension = filename.slice(filename.indexOf("."));
-    fileType = extension
-  }
-
-  return fileType;
-}
-
 app.use(cors());
 
-app.use("/", express.static(path.join(__dirname, '../app/dist')));
+
+
+app.use((req, res, next) => {
+  if (/(.ico|.js|.css|.jpg|.png|.map)$/i.test(req.path) || req.method !== "GET") {
+    next();
+  } else {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    res.sendFile(path.join(__dirname, '../app/dist/', 'index.html'));
+  }
+});
+app.use(express.static(path.join(__dirname, '../app/dist')));
+
 
 app.use(morgan('combined', { stream: accessLogStream }))
 
