@@ -1,3 +1,11 @@
+### File explorer
+
+api-folder is working name for project of browser based file explorer of your filesystem
+
+![image](https://github.com/user-attachments/assets/ba53d2cc-2b90-4b9c-b531-4fbc6fbbe766)
+
+
+
 Here’s a basic README.md template for running an Express.js app in English:
 
 ```markdown
